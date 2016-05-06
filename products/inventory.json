@@ -1,0 +1,34 @@
+{
+  "cars": [
+    {
+      "image": "products/img/orange_mini.jpg",
+      "make": "MINI",
+      "model": "Cooper",
+      "year": "2015",
+      "price": "$20,700",
+      "color": "darkorange",
+      "purchased": false,
+      "description": "Super cute orange Mini Cooper, is faster than any other vehicle in Mario Kart."
+    },
+    {
+      "image": "products/img/yellow_beetle.jpg",
+      "make": "Volkswagon",
+      "model": "Beetle",
+      "year": "2014",
+      "price": "$19,999",
+      "color": "khaki",
+      "purchased": false,
+      "description": "Even cuter than the Mini, the cutest VW Beetle. Can run on gasoline or sunshine and rainbows."
+    },
+    {
+      "image": "products/img/red_fortwo.jpg",
+      "make": "Smart",
+      "model": "Fortwo",
+      "year": "2013",
+      "price": "$13,449",
+      "color": "crimson",
+      "purchased": true,
+      "description": "Not-quite-as-cute-but-cute-enough Smart Fortwo. Can carry yourself and maybe two bags of groceries."
+    }
+  ]
+}
