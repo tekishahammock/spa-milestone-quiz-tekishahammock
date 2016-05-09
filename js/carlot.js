@@ -1,19 +1,31 @@
 var carLot = (function (originalCarLot) {
+  // Private array that holds the objects post-parse out of the JSON.
   var inventory = [];
 
   return {
+    // Publicly viewable function that will display the current contents of the private array.
     getInventory: function () {
       return inventory;
     },
+    // *extra* function added to template to allow object.description to be edited when DOM is edited.
     editInventoryDescrip: function (objectID) {
-      for (var i = 0; i < inventory.length; i++) {
-        if (inventory[i].id == objectID) {
-          inventory[i].description = carInput.value;
-          console.log(`Car description has been changed to: ${inventory[objectID].description}.`);
-          console.log(inventory[i]);
+      // Allows error message to display to inform user that they need to pick a car to edit.
+      if (inventory[objectID] === undefined) {
+        alert(`Please pick a car to edit description!`)
+      } else {
+        // locates correct object in array based on matching the value of object.id with current value of the objectID global variable.
+        // I recognize that I could have used forEach in the place of maybe all of my for-loops, but this syntax is easier for me to read, oddly enough.
+        for (var i = 0; i < inventory.length; i++) {
+          if (inventory[i].id == objectID) {
+            inventory[i].description = carInput.value;
+            console.log(`Car description has been changed to: ${inventory[objectID].description}.`);
+            console.log(inventory[i]);
+          }
         }
       }
     },
+    // *extra* function added to template to allow object.purchased to be edited when DOM is edited.
+    // Additional details mostly same as above, save for additional if-statement to accomodate flipping the boolean value.
     editInventoryPurchased: function (objectID) {
       if (inventory[objectID] === undefined) {
         alert(`Please pick a car to edit current inventory!`);
@@ -33,6 +45,9 @@ var carLot = (function (originalCarLot) {
         }
       }
     },
+    // First function that processes the JSON string and turns it into useable objects.
+    // Also pushes the brand-new objects into the private array in this IIFE.
+    // ALSO runs the next function that actually processes the objects into elements on the DOM.
     loadInventory: function (callback) {
       var inventoryLoader = new XMLHttpRequest();
       inventoryLoader.addEventListener("load", function () {
