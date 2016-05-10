@@ -23,16 +23,18 @@ function populatePage (inventory) {
     // THIS IS WHERE THE MAGIC HAPPENS!
     // Also, added span tags to specific locations that I needed to be able to edit from the DOM, is that kosher?
     container.innerHTML +=
-     `<div class="car-cards" id="car${counter}">
-        <img src="${cars.image}">
-        <h2>${cars.make} ${cars.model}</h2>
-        <p><span class="car-details">Year:</span> ${cars.year}</p>
-        <p><span class="car-details">Price:</span> ${cars.price}</p>
-        <p><span class="car-details">Purchased:</span> <span id="sold${counter}">${purchased}</span></p>
-        <h3>Description:</h3>
-        <div class="description">
-          <p><span class="car-details">Color:</span> ${cars.color}</p>
-          <p><span class="car-details">Details:</span> <span id="descrip${counter}">${cars.description}</span></p>
+     `<div class="col-sm-4 card-container">
+        <div class="car-cards" id="car${counter}">
+          <img src="${cars.image}" class="img-responsive">
+          <h2>${cars.make} ${cars.model}</h2>
+          <p><span class="car-details">Year:</span> ${cars.year}</p>
+          <p><span class="car-details">Price:</span> ${cars.price}</p>
+          <p><span class="car-details">Purchased:</span> <span id="sold${counter}">${purchased}</span></p>
+          <h3>Description:</h3>
+          <div class="description">
+            <p><span class="car-details">Color:</span> <span id="color${counter}">${cars.color}</span></p>
+            <p><span class="car-details">Details:</span> <span id="descrip${counter}">${cars.description}</span></p>
+          </div>
         </div>
       </div>`;
     counter++;

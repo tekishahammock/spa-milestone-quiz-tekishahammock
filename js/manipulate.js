@@ -1,8 +1,27 @@
 var carLot = (function (manipCarLot) {
   // ALL DOM-EDITING FUNCTIONS GO HERE!
+  // Changes the color of the border surrounding the car-card to the color of the car on mouseenter.
+  manipCarLot.changeColor = function (mouseenter) {
+    var colorID = mouseenter.id.replace("car", "color");
+    var carColor = document.getElementById(colorID).innerHTML;
+    mouseenter.style.borderColor = carColor;
+  };
+  // Changes the color of the border surrounding the car card back to black on mouseleave.
+  manipCarLot.changeBack = function (mouseleave) {
+    mouseleave.style.borderColor = "#202020";
+  };
   // This starts the process for editing the DOM by telling the user what car is being edited, putting focus on the input, and assigning a value to currentID.
   manipCarLot.carsStartEditing = function (clicked) {
+    // for-loop to check if any car-cards already have the "edit-select" class (signifying that they are being edited).
+    for (var i = 0; i < carCards.length; i++) {
+      // if any car-card has class of "edit-select", then it removes that class.
+      if (carCards.item(i).classList.contains("edit-select")) {
+        carCards.item(i).classList.remove("edit-select");
+      }
+    };
     carInput.focus();
+    // adds the "edit-select" class to the freshly clicked card.
+    clicked.classList.add("edit-select");
     var currentCar = clicked.children[1].innerHTML;
     document.getElementById("current-car").innerHTML = `Now editing ${currentCar}`;
     currentID = clicked.id.replace("car", "");

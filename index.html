@@ -2,32 +2,35 @@
 <html>
 <head>
   <title>Quiz - Car Lot</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="css/quiz.css">
 </head>
 <body>
   <!-- header nav -->
-  <nav>
-    <header id="header">
-      <h1>USED CAR INVENTORY</h1>
-      <h2>Employee-Facing Site</h2>
-    </header>
-    <!-- will display what car the user has selected to edit -->
-    <div id="current-car"></div>
-    <!-- input for editing car description, has two event listeners attached -->
-    <input type="text" id="car-input"></input>
-    <!-- button for toggling purchase status, has one event listener attached -->
-    <button type="button" id="sold">Sold?</button>
+  <nav class="navbar navbar-inverse">
+    <h1>Car Inventory</h1>
+    <div class="container navbar-form navbar-right">
+      <!-- will display what car the user has selected to edit -->
+      <div id="current-car"></div>
+      <!-- input for editing car description, has two event listeners attached -->
+      <input type="text" class="form-control" id="car-input"></input>
+      <!-- button for toggling purchase status, has one event listener attached -->
+      <button type="button" class="btn btn-default" id="sold">Sold?</button>
+    </div>
   </nav>
   <!-- where allow of the car cards will go once loaded into the dom, no event listeners attached -->
-  <div id="container" class="container">
+  <div class="container-fluid">
+    <div id="container" class="row">
+    </div>
   </div>
+
 
   <!-- ALL OF THE SCRIPT LINKS -->
   <script src="js/carlot.js" type="text/javascript"></script>
   <script src="js/eventhandler.js" type="text/javascript"></script>
   <script src="js/manipulate.js" type="text/javascript"></script>
   <script src="js/quiz.js" type="text/javascript"></script>
-  <footer>
+  <footer class="footer">
     <p>&copy;Tekisha Hammock 2016</p>
   </footer>
 </body>

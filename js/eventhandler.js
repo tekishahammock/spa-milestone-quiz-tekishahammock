@@ -5,6 +5,14 @@ var carLot = (function (eventCarLot) {
     // Listens for one of the car cards to be clicked (anywhere in the card) to fire the first editing function.
     // Passes in the DOM element for the currentTarget.
     for (var i = 0; i < carCards.length; i++) {
+      // adds a mouseenter event to the cards to allow for cool changing colors!
+      carCards.item(i).addEventListener('mouseenter', function() {
+        carLot.changeColor(event.currentTarget);
+      });
+      // adds a mouseleave event to the cards to change back the cool changing colors!
+      carCards.item(i).addEventListener('mouseleave', function() {
+        carLot.changeBack(event.currentTarget);
+      });
       carCards.item(i).addEventListener('click', function() {
         carLot.carsStartEditing(event.currentTarget);
         carLot.editInventoryDescrip(currentID);

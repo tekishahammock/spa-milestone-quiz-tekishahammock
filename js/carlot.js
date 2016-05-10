@@ -14,11 +14,11 @@ var carLot = (function (originalCarLot) {
         alert(`Please pick a car to edit description!`)
       } else {
         // locates correct object in array based on matching the value of object.id with current value of the objectID global variable.
-        // I recognize that I could have used forEach in the place of maybe all of my for-loops, but this syntax is easier for me to read, oddly enough.
         for (var i = 0; i < inventory.length; i++) {
           if (inventory[i].id == objectID) {
-            inventory[i].description = carInput.value;
-            console.log(`Car description has been changed to: ${inventory[objectID].description}.`);
+            var editingDescrip = `descrip${objectID}`
+            inventory[i].description = document.getElementById(editingDescrip).innerHTML;
+            console.log(`Car description has been changed to: "${inventory[objectID].description}."`);
             console.log(inventory[i]);
           }
         }
