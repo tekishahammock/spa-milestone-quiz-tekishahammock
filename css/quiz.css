@@ -1,0 +1,71 @@
+/*CAR LOT CSS (With Bootstrap Assistance)*/
+
+/*Nav*/
+h1 {
+  display: inline-block;
+  float: left;
+  margin: 0;
+}
+
+.navbar {
+  padding: 2%;
+  color: white;
+}
+
+.navbar-right {
+  vertical-align: bottom;
+  height: 60px;
+}
+
+#current-car {
+  height: 2rem;
+}
+
+/*Body*/
+.car-cards {
+  border: 2px solid #202020;
+  border-radius: 10px;
+  padding: 5%;
+  margin: 1.3%;
+  height: inherit;
+}
+
+.edit-select {
+  border-width: 10px;
+  background-color: lightgray;
+}
+
+.col-sm-4 {
+  height: 100%;
+}
+
+.footer {
+  display: block;
+  margin: 3vh;
+}
+
+/*Media Queries*/
+@media (min-width: 768px) {
+  .card-container {
+    height: 95vh;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    height: 20vh;
+    padding: 0 2%;
+  }
+
+  .container {
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    display: block;
+    margin: 10px 0;
+  }
+}
