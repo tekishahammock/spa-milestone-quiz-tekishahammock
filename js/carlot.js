@@ -57,7 +57,7 @@ var carLot = (function (originalCarLot) {
         };
         populatePage(inventory);
       });
-      inventoryLoader.open("GET", "../products/inventory.json");
+      inventoryLoader.open("GET", "products/inventory.json");
       inventoryLoader.send();
     }
   };
